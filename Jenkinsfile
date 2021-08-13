@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('test') {
       steps {
-        echo 'Hello My pipeline'
+        echo 'Hello my test path '
       }
     }
 
