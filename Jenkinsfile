@@ -1,9 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
         build(job: 'build test from git hello.c', propagate: true, quietPeriod: 1)
+        echo 'Hello My pipeline'
       }
     }
 
