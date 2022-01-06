@@ -1,21 +1,58 @@
-pipeline{
-      agent any
-    stages{
-stage('build')
-{
-setps{
-sh 'echo "building............"'
-sh 'chmod +x scripts/Linux-build.sh'
-sh 'scripts/Linux-build.sh'
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
 }
+
+
+/* pipeline {
+    agent any
+
+    stages {
+        stage ('Compile Stage') {
+
+            steps {
+                withMaven(maven : 'maven_3_5_0') {
+                    sh 'mvn clean compile'
+                }
+            }
+        }
+
+        stage ('Testing Stage') {
+
+            steps {
+                withMaven(maven : 'maven_3_5_0') {
+                    sh 'mvn test'
+                }
+            }
+        }
+
+
+        stage ('Deployment Stage') {
+            steps {
+                withMaven(maven : 'maven_3_5_0') {
+                    sh 'mvn deploy'
+                }
+            }
+        }
+    }
 }
-stage('Test')
-{
-setp{
-sh 'echo "Test Running........."'
-sh 'shmod +x scripts/Linux-Run.sh'
-sh 'scripts/Linux-Run.sh'
-}
-}
-}
-}
+*/
