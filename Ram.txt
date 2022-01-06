@@ -1,3 +1,7 @@
 Hello Ram
+<<<<<<< HEAD
+hi
+=======
 Hello Ramchand
+>>>>>>> 76695a42786edba78c7d3aee8a049acf962f0819
 
